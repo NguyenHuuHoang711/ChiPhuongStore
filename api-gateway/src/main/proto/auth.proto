@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package auth;
+
+//option java_package = "com.myShop.grpc";
+//option java_outer_classname = "AuthProto";
+//option java_multiple_files = true;
+
+service AuthService {
+  rpc register(RegisterRequest) returns (AuthResponse);
+  rpc login(LoginRequest) returns (AuthResponse);
+  rpc refreshToken(RefreshRequest) returns (AuthResponse);
+  rpc logout(LogoutRequest) returns (LogoutResponse);
+}
+
+//message ValidateTokenRequest {
+//  string access_token = 1;
+//}
+//
+//message ValidateTokenResponse {
+//  bool is_valid = 1;
+//  int64 user_id = 2;
+//  string role = 3;
+//}
+
+message AuthResponse{
+  string accessToken = 1;
+  string refreshToken = 2;
+}
+
+message LogoutResponse{
+  bool success = 1;
+  string message = 2;
+}
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LogoutRequest {
+  string refreshToken = 1;
+}
+
+message RefreshRequest {
+  string refreshToken = 1;
+}
+
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+}
+
+

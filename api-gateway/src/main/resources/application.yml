@@ -1,0 +1,8 @@
+server:
+  port: 3000
+
+grpc:
+  client:
+    auth-service:
+      address: "static://localhost:9090"
+      negotiationType: PLAINTEXT

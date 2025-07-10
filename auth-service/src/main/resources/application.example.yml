@@ -1,0 +1,61 @@
+# src/main/resources/application.yml
+server:
+  port:
+
+spring:
+  profiles:
+    active:
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name:
+    hikari:
+      maximum-pool-size:
+      minimum-idle:
+      idle-timeout:
+      max-lifetime:
+      connection-timeout:
+  jpa:
+    hibernate:
+      ddl-auto:
+    show-sql:
+    database-platform:
+  data:
+    redis:
+      host:
+      port:
+      password:
+      lettuce:
+        pool:
+          max-active:
+          max-idle:
+          min-idle:
+          max-wait:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+
+logging:
+  level:
+    root:
+    org.springframework:
+  file:
+    path:
+  pattern:
+    console:
+
+jwt:
+  secret:
+  exp:
+  ref-exp:
+
+rate-limit:
+  limit:
+  window-seconds:
+
+
+
